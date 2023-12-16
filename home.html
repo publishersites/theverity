@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Verity - News Website</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .header {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
+    .nav {
+        background-color: #333;
+        overflow: hidden;
+    }
+    .nav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    .nav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    .main-content {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+    }
+    .left-column, .right-column {
+        width: 48%;
+    }
+    .news-item {
+        margin-bottom: 20px;
+    }
+    .news-item img {
+        max-width: 100%;
+        height: auto;
+    }
+    .footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: relative; /* Changed from fixed to relative */
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding is included in width */
+    }
+    .footer-nav {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        margin: 10px 0;
+    }
+    .footer-nav li {
+        padding: 0 10px;
+    }
+    .footer-nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 0.9em;
+    }
+    .footer-nav a:hover {
+        text-decoration: underline;
+    }
+    .slider {
+        position: relative;
+        width: 100%;
+        max-width: 600px; /* Adjust as needed */
+        margin: auto;
+        overflow: hidden;
+    }
+    .slide {
+        display: none;
+        width: 100%;
+    }
+    .active-slide {
+        display: block;
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>THE VERITY</h1>
+</div>
+
+<div class="nav">
+    <a href="#">HOME</a>
+    <a href="#">NEWS</a>
+    <a href="#">EDITORIAL</a>
+    <a href="#">FEATURE</a>
+    <a href="#">SCIENCE</a>
+    <a href="#">SPORTS</a>
+</div>
+
+<div class="main-content">
+    <div class="left-column">
+        <h2>Latest News!</h2>
+        <div class="news-item">
+            <img src="news_image_1.jpg" alt="News Image">
+            <p>News headline or description goes here.</p>
+        </div>
+        <!-- More news items -->
+    </div>
+    <div class="headline-center">
+        (MAIN) NEWS HEADLINE
+        <div class="slider">
+            <div class="slide active-slide">
+                <img src="image1.jpg" alt="Image 1" style="width:100%;">
+            </div>
+            <div class="slide">
+                <img src="image2.jpg" alt="Image 2" style="width:100%;">
+            </div>
+            <div class="slide">
+                <img src="image3.jpg" alt="Image 3" style="width:100%;">
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+    </div>
+    <div class="right-column">
+        <h2>Top Stories!</h2>
+        <div class="news-item">
+            <img src="news_image_2.jpg" alt="News Image">
+            <p>News headline or description goes here.</p>
+        </div>
+        <!-- More news items -->
+    </div>
+</div>
+
+<div class="footer">
+    <ul class="footer-nav">
+        <li><a href="#">HOMEPAGE</a></li>
+        <li><a href="#">NEWS SECTION</a></li>
+        <li><a href="#">EDITORIAL</a></li>
+        <li><a href="#">ARTICLE</a></li>
+        <li><a href="#">FEATURE ARTICLE</a></li>
+        <li><a href="#">SCIENCE & TECHNOLOGY</a></li>
+        <li><a href="#">SPORTS NEWS</a></li>
+    </ul>
+    <p>&copy; 2023 The Verity News Company</p>
+</div>
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex-1].style.display = "block";  
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+</script>
+</body>
+</html>
